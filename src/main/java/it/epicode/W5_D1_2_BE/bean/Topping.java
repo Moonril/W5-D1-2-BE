@@ -8,5 +8,5 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class Topping extends Product{
-    private boolean vegan;
+    private boolean vegetarian;
 }

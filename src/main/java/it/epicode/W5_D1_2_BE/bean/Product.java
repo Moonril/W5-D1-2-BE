@@ -8,6 +8,6 @@ import lombok.ToString;
 @NoArgsConstructor
 public abstract class Product {
     private String name;
-    private int price;
+    private double price;
     private int calories;
 }
