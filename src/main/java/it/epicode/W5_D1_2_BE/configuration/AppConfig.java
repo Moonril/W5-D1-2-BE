@@ -1,9 +1,7 @@
 package it.epicode.W5_D1_2_BE.configuration;
 
-import it.epicode.W5_D1_2_BE.bean.Drink;
-import it.epicode.W5_D1_2_BE.bean.Menu;
-import it.epicode.W5_D1_2_BE.bean.Pizza;
-import it.epicode.W5_D1_2_BE.bean.Topping;
+import it.epicode.W5_D1_2_BE.bean.*;
+import it.epicode.W5_D1_2_BE.enums.StatoTavolo;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +22,7 @@ public class AppConfig {
         return water;
     }
 
-    @Bean(name = "tomato")
+    @Bean(name = "lemonade")
     public Drink getLemonade(){
         Drink lemonade = new Drink();
         lemonade.setAlcoholic(false);
@@ -109,22 +107,37 @@ public class AppConfig {
         return prosciutto;
     }
 
-    @Bean(name = "pizza al salame")
+    @Bean(name = "pizza diavola")
     public Pizza getPizzaSalame(@Qualifier("tomato") Topping tomato,
                                     @Qualifier("mozzarella") Topping mozzarella,
                                     @Qualifier("salame") Topping salame){
         Pizza pizzaSalame = new Pizza();
-        pizzaSalame.setName("Pizza al Prosciutto");
+        pizzaSalame.setName("Pizza Diavola");
         pizzaSalame.setPrice(6.49);
-        pizzaSalame.setCalories(1144);
+        pizzaSalame.setCalories(1174);
         pizzaSalame.setGlutenFree(false);
         pizzaSalame.setToppings(List.of(tomato, mozzarella, salame));
         return pizzaSalame;
     }
 
-    @Bean
-    public Menu getMenu(){
-        Menu menu = new Menu();
+    @Bean(name = "t1")
+    public Table getTavolo1(){
+        Table t1 = new Table();
+        t1.setCostoCoperto(1.5);
+        t1.setStatoTavolo(StatoTavolo.LIBERO);
+        t1.setNumero(1);
+        t1.setNumeroMaxCoperti(6);
+        return t1;
+    }
+
+    @Bean(name = "t2")
+    public Table getTavolo2(){
+        Table t2 = new Table();
+        t2.setCostoCoperto(2);
+        t2.setStatoTavolo(StatoTavolo.LIBERO);
+        t2.setNumero(2);
+        t2.setNumeroMaxCoperti(2);
+        return t2;
     }
 
     // recuperare il menu dal contesto e stampare il suo contenuto

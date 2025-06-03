@@ -12,7 +12,7 @@ public class W5D12BeApplication {
 
 		SpringApplication.run(W5D12BeApplication.class, args);
 
-		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+
 
 	}
 
