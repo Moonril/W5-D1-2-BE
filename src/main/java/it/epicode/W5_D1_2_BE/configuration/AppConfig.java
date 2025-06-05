@@ -140,5 +140,4 @@ public class AppConfig {
         return t2;
     }
 
-    // recuperare il menu dal contesto e stampare il suo contenuto
 }
