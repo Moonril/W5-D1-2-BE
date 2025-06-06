@@ -82,7 +82,7 @@ public class AppConfig {
         return salame;
     }
 
-    @Bean(name = "pizza margherita")
+    @Bean(name = "margherita")
     public Pizza getPizzaMargherita(@Qualifier("tomato") Topping tomato,
                                     @Qualifier("mozzarella") Topping mozzarella){
         Pizza margherita = new Pizza();
@@ -94,7 +94,7 @@ public class AppConfig {
         return margherita;
     }
 
-    @Bean(name = "pizza al prosciutto")
+    @Bean(name = "prosciutto")
     public Pizza getPizzaProsciutto(@Qualifier("tomato") Topping tomato,
                                     @Qualifier("mozzarella") Topping mozzarella,
                                     @Qualifier("ham") Topping ham){
@@ -107,7 +107,7 @@ public class AppConfig {
         return prosciutto;
     }
 
-    @Bean(name = "pizza diavola")
+    @Bean(name = "diavola")
     public Pizza getPizzaSalame(@Qualifier("tomato") Topping tomato,
                                     @Qualifier("mozzarella") Topping mozzarella,
                                     @Qualifier("salame") Topping salame){
@@ -138,6 +138,12 @@ public class AppConfig {
         t2.setNumero(2);
         t2.setNumeroMaxCoperti(2);
         return t2;
+    }
+
+    @Bean(name = "menu")
+    public Menu getMenu(){
+        Menu menu = new Menu();
+        return menu;
     }
 
 }

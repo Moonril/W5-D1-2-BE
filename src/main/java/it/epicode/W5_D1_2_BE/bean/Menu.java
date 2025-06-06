@@ -23,10 +23,9 @@ public class Menu {
     @GeneratedValue
     private int id;
     //@Autowired
+    @OneToMany(mappedBy = "menu")
     private List<Product> products;
 
-    @OneToMany(mappedBy = "menu")
-    private List<Product> prodotti;
 
     @OneToMany(mappedBy = "menu")
     private List<Table> table;
